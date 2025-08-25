@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "349857220547",
+    "project_id": "armiiapp",
+    "storage_bucket": "armiiapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349857220547:android:5a5101a3867c3ca764df76",
+        "android_client_info": {
+          "package_name": "com.example.armii_recruiter_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb4E3VBcvraw6G2PnE-W3LNaHxcY47TNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

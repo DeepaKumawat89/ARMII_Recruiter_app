@@ -1,0 +1,1 @@
+{"flutter":{"platforms":{"android":{"default":{"projectId":"armiiapp","appId":"1:349857220547:android:5a5101a3867c3ca764df76","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"armiiapp","configurations":{"android":"1:349857220547:android:5a5101a3867c3ca764df76","ios":"1:349857220547:ios:1b059dc705a11d5864df76"}}}}}}
