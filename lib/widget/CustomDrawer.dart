@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../LoginPage.dart';
-import '../auth_provider.dart' as my_auth;
-import 'drawer/ManageBot.dart';
-import 'drawer/ManageGreetings.dart';
-import 'drawer/MoreSetting.dart';
-import 'drawer/PaymentTracking.dart';
-import 'drawer/RequestHelp.dart';
-import 'drawer/Reportissue.dart';
-import 'drawer/SwitchAccount.dart';
-import 'drawer/UpdateSoftware.dart';
+import '../Auth/LoginPage.dart';
+import '../Auth/auth_provider.dart' as my_auth;
+import '../Screens/drawer/ManageBot.dart';
+import '../Screens/drawer/ManageGreetings.dart';
+import '../Screens/drawer/MoreSetting.dart';
+import '../Screens/drawer/PaymentTracking.dart';
+import '../Screens/drawer/Reportissue.dart';
+import '../Screens/drawer/RequestHelp.dart';
+import '../Screens/drawer/SwitchAccount.dart';
+import '../Screens/drawer/UpdateSoftware.dart';
+
 
 
 class CustomDrawer extends StatelessWidget {

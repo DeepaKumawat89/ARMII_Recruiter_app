@@ -30,40 +30,39 @@ class _ObservePageState extends State<ObservePage> {
       body: Column(
         children: [
           SizedBox(height: 16),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: List.generate(titles.length, (index) {
+          // Horizontal chips row for section selection (matching HomePage style)
+          SizedBox(
+            height: 48,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: titles.length,
+              itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                  child: GestureDetector(
-                    onTap: () {
+                  child: ChoiceChip(
+                    label: Text(titles[index]),
+                    selected: selectedIndex == index,
+                    // selectedColor: Colors.indigo.shade100,
+                    // backgroundColor: Colors.grey.shade200,
+                    // labelStyle: TextStyle(
+                    //   color: selectedIndex == index ? Colors.indigo : Colors.black87,
+                    //   fontWeight: FontWeight.w600,
+                    // ),
+                    // shape: RoundedRectangleBorder(
+                    //   borderRadius: BorderRadius.circular(20),
+                    //   side: BorderSide(
+                    //     color: selectedIndex == index ? Colors.indigo : Colors.transparent,
+                    //     width: 2,
+                    //   ),
+                    // ),
+                    onSelected: (_) {
                       setState(() {
                         selectedIndex = index;
                       });
                     },
-                    child: Container(
-                      width: 160, // Fixed width for better readability
-                      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 8),
-                      decoration: BoxDecoration(
-                        color: selectedIndex == index ? Colors.blue : Colors.grey[200],
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Center(
-                        child: Text(
-                          titles[index],
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: selectedIndex == index ? Colors.white : Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 13,
-                          ),
-                        ),
-                      ),
-                    ),
                   ),
                 );
-              }),
+              },
             ),
           ),
           SizedBox(height: 24),

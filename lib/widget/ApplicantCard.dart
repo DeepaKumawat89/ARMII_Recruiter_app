@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../ApplicantDetailsPage.dart';
+import '../Screens/DashBoardScreens/SubScreen/ApplicantDetailsPage.dart';
 
 class Applicant {
   final String name;
@@ -48,6 +48,7 @@ class ApplicantCard extends StatelessWidget {
         );
       },
       child: Card(
+        color: Colors.white,
         margin: EdgeInsets.symmetric(vertical: 6, horizontal: 12),
         elevation: 2,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),

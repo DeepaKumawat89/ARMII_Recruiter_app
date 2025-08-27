@@ -1,10 +1,16 @@
-import 'package:armii_recruiter_app/LoginPage.dart';
+import 'package:armii_recruiter_app/Auth/LoginPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import '../app_state.dart';
 
 class SelectRolePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -17,12 +23,12 @@ class SelectRolePage extends StatelessWidget {
               Text(
                 "Select Your Role",
                 style: GoogleFonts.inter(
-                  fontSize: 26,
+                  fontSize: screenWidth * 0.08,
                   fontWeight: FontWeight.bold,
                   color: Colors.black, // White title
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: screenHeight * 0.05),
 
               // Recruiter Card
               GestureDetector(
@@ -33,8 +39,8 @@ class SelectRolePage extends StatelessWidget {
                   );
                 },
                 child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(vertical: 50),
+                  width: screenWidth * 0.9,
+                  padding: EdgeInsets.symmetric( vertical:  screenHeight * 0.06,),
                   decoration: BoxDecoration(
                     color: Colors.white, // White box
                     borderRadius: BorderRadius.circular(10),
@@ -44,7 +50,7 @@ class SelectRolePage extends StatelessWidget {
                     child: Text(
                       "I am Recruiter / Hirer",
                       style: GoogleFonts.inter(
-                        fontSize: 18,
+                        fontSize: MediaQuery.of(context).size.width * 0.045,
                         fontWeight: FontWeight.w600,
                         color: Colors.black, // Black text
                       ),
@@ -53,11 +59,15 @@ class SelectRolePage extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 20),
+              SizedBox(height: screenHeight * 0.03),
 
               // Candidate Card
               GestureDetector(
                 onTap: () {
+                  // Example: increment counter in AppState when candidate is selected
+                  context.read<AppState>().increment();
+                  print('Candidate selected, counter: '
+                    '${context.read<AppState>().counter}');
                   // Navigator.push(
                   //   context,
                   //   MaterialPageRoute(builder: (context) => CandidatePage()),
@@ -65,7 +75,9 @@ class SelectRolePage extends StatelessWidget {
                 },
                 child: Container(
                   width: double.infinity,
-                  padding: EdgeInsets.symmetric(vertical: 50),
+                  padding: EdgeInsets.symmetric(
+                    vertical: screenHeight * 0.06,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
@@ -75,7 +87,7 @@ class SelectRolePage extends StatelessWidget {
                     child: Text(
                       "I am Candidate",
                       style: GoogleFonts.inter(
-                        fontSize: 18,
+                        fontSize: screenWidth * 0.045,
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
                       ),
