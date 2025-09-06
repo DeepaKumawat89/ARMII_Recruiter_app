@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ManageGreetings extends StatefulWidget {
@@ -35,7 +34,7 @@ class _ManageGreetingsState extends State<ManageGreetings> {
     final result = await showDialog<String>(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Add Greeting', style: GoogleFonts.playfairDisplay()),
+        title: Text('Add Greeting', style: TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.bold)),
         content: TextField(
           autofocus: true,
           onChanged: (value) => newGreeting = value,
@@ -70,7 +69,7 @@ class _ManageGreetingsState extends State<ManageGreetings> {
     final result = await showDialog<String>(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Edit Greeting', style: GoogleFonts.playfairDisplay()),
+        title: Text('Edit Greeting', style: TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.bold)),
         content: TextField(
           autofocus: true,
           controller: TextEditingController(text: editedGreeting),
@@ -112,7 +111,7 @@ class _ManageGreetingsState extends State<ManageGreetings> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Manage Greetings', style: GoogleFonts.playfairDisplay()),
+        title: Text('Manage Greetings', style: TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.bold)),
         backgroundColor: Colors.indigo,
         actions: [
           IconButton(
@@ -123,12 +122,12 @@ class _ManageGreetingsState extends State<ManageGreetings> {
         ],
       ),
       body: _greetings.isEmpty
-          ? Center(child: Text('No greetings yet.', style: GoogleFonts.playfairDisplay(fontSize: 18, color: Colors.grey)))
+          ? Center(child: Text('No greetings yet.', style: TextStyle(fontFamily: 'Inter', fontSize: 18, color: Colors.grey)))
           : ListView.separated(
               itemCount: _greetings.length,
               separatorBuilder: (_, __) => Divider(),
               itemBuilder: (context, index) => ListTile(
-                title: Text(_greetings[index], style: GoogleFonts.playfairDisplay()),
+                title: Text(_greetings[index], style: TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.normal)),
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [

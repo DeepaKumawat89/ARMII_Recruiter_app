@@ -16,12 +16,12 @@ class _ObservePageState extends State<ObservePage> {
     'Rejected Candidates',
   ];
 
-  final List<String> descriptions = [
-    "This section allows the user to check which applicant has saved any Job Role which are posted by the Recruiter.",
-    "This section allows the user to check which applicant has viewed any Job Role which are posted by the Recruiter.",
-    "This section allows the user to check the list of candidates whom the user has Shortlisted.",
-    "This section allows the user to check the list of candidates whom the user has Hired.",
-    "This section allows the user to check the list of candidates whom the user has Rejected.",
+  final List<List<String>> applicants = [
+    ['John Doe', 'Jane Smith', 'Alice Johnson'],
+    ['Michael Brown', 'Emily Davis', 'Chris Wilson'],
+    ['Sophia Taylor', 'James Anderson', 'Olivia Thomas'],
+    ['Liam Martinez', 'Emma Garcia', 'Noah Robinson'],
+    ['Ava Clark', 'Ethan Lewis', 'Isabella Walker'],
   ];
 
   @override
@@ -40,21 +40,11 @@ class _ObservePageState extends State<ObservePage> {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 4.0),
                   child: ChoiceChip(
-                    label: Text(titles[index]),
+                    label: Text(
+                      titles[index],
+                      style: TextStyle(fontFamily: 'Inter'),
+                    ),
                     selected: selectedIndex == index,
-                    // selectedColor: Colors.indigo.shade100,
-                    // backgroundColor: Colors.grey.shade200,
-                    // labelStyle: TextStyle(
-                    //   color: selectedIndex == index ? Colors.indigo : Colors.black87,
-                    //   fontWeight: FontWeight.w600,
-                    // ),
-                    // shape: RoundedRectangleBorder(
-                    //   borderRadius: BorderRadius.circular(20),
-                    //   side: BorderSide(
-                    //     color: selectedIndex == index ? Colors.indigo : Colors.transparent,
-                    //     width: 2,
-                    //   ),
-                    // ),
                     onSelected: (_) {
                       setState(() {
                         selectedIndex = index;
@@ -66,12 +56,37 @@ class _ObservePageState extends State<ObservePage> {
             ),
           ),
           SizedBox(height: 24),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
-              descriptions[selectedIndex],
-              style: TextStyle(fontSize: 16),
-              textAlign: TextAlign.center,
+          Expanded(
+            child: PageView.builder(
+              controller: PageController(initialPage: selectedIndex),
+              onPageChanged: (index) {
+                setState(() {
+                  selectedIndex = index;
+                });
+              },
+              itemCount: titles.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Column(
+                    children: applicants[index]
+                        .map((applicant) => Card(
+                              elevation: 4,
+                              margin: const EdgeInsets.symmetric(vertical: 8),
+                              child: ListTile(
+                                title: Text(
+                                  applicant,
+                                  style: TextStyle(
+                                    fontFamily: 'Inter',
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                            ))
+                        .toList(),
+                  ),
+                );
+              },
             ),
           ),
         ],

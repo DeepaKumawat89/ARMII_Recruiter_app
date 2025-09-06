@@ -6,19 +6,23 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'app_state.dart';
 import 'firebase_options.dart';
-
+import 'provider/internship_provider.dart';
+import 'provider/job_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  // Removed loadTheme();
 
   const pdfAssetPath = 'assets/pdf/Deepak_Kumawat_Resume.pdf';
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => AppState(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AppState()),
+        ChangeNotifierProvider(create: (_) => JobProvider()),
+        ChangeNotifierProvider(create: (_) => InternshipProvider()),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: SplashScreen(),

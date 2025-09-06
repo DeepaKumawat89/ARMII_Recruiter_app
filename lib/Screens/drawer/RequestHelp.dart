@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class RequestHelp extends StatefulWidget {
   const RequestHelp({Key? key}) : super(key: key);
@@ -52,7 +51,7 @@ class _RequestHelpState extends State<RequestHelp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Request Help', style: GoogleFonts.playfairDisplay()),
+        title: Text('Request Help', style: TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.bold)),
         backgroundColor: Colors.indigo,
       ),
       backgroundColor: Colors.white,
@@ -63,7 +62,8 @@ class _RequestHelpState extends State<RequestHelp> {
           children: [
             // Help Request Form
             Text('Submit a Help Request',
-                style: GoogleFonts.playfairDisplay(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 18,
                   color: Colors.grey.shade700,
                 )),
@@ -75,27 +75,33 @@ class _RequestHelpState extends State<RequestHelp> {
                   TextFormField(
                     decoration: InputDecoration(
                       labelText: 'Subject',
+                      labelStyle: TextStyle(fontFamily: 'Inter'),
                       border: OutlineInputBorder(),
                     ),
+                    style: TextStyle(fontFamily: 'Inter'),
                     validator: (val) => val == null || val.isEmpty ? 'Enter subject' : null,
                     onSaved: (val) => subject = val ?? '',
                   ),
                   SizedBox(height: 12),
                   DropdownButtonFormField<String>(
                     value: topic,
-                    items: topics.map((t) => DropdownMenuItem(value: t, child: Text(t))).toList(),
+                    items: topics.map((t) => DropdownMenuItem(value: t, child: Text(t, style: TextStyle(fontFamily: 'Inter')))).toList(),
                     onChanged: (val) => setState(() => topic = val ?? 'Account'),
                     decoration: InputDecoration(
                       labelText: 'Topic',
+                      labelStyle: TextStyle(fontFamily: 'Inter'),
                       border: OutlineInputBorder(),
                     ),
+                    style: TextStyle(fontFamily: 'Inter'),
                   ),
                   SizedBox(height: 12),
                   TextFormField(
                     decoration: InputDecoration(
                       labelText: 'Message',
+                      labelStyle: TextStyle(fontFamily: 'Inter'),
                       border: OutlineInputBorder(),
                     ),
+                    style: TextStyle(fontFamily: 'Inter'),
                     maxLines: 3,
                     validator: (val) => val == null || val.isEmpty ? 'Enter message' : null,
                     onSaved: (val) => message = val ?? '',
@@ -109,7 +115,7 @@ class _RequestHelpState extends State<RequestHelp> {
                           foregroundColor: Colors.white,
                         ),
                         icon: Icon(Icons.attach_file),
-                        label: Text('Attach File'),
+                        label: Text('Attach File', style: TextStyle(fontFamily: 'Inter')),
                         onPressed: () {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(content: Text('Attach File Clicked (demo only)')),
@@ -118,7 +124,7 @@ class _RequestHelpState extends State<RequestHelp> {
                       ),
                       if (attachedFile != null) ...[
                         SizedBox(width: 8),
-                        Text(attachedFile!, style: TextStyle(color: Colors.grey.shade700)),
+                        Text(attachedFile!, style: TextStyle(fontFamily: 'Inter', color: Colors.grey.shade700)),
                       ]
                     ],
                   ),
@@ -135,7 +141,7 @@ class _RequestHelpState extends State<RequestHelp> {
                         ),
                       ),
                       onPressed: submitRequest,
-                      child: Text('Submit', style: GoogleFonts.playfairDisplay(fontSize: 18)),
+                      child: Text('Submit', style: TextStyle(fontFamily: 'Inter', fontSize: 18)),
                     ),
                   ),
                 ],
@@ -144,57 +150,60 @@ class _RequestHelpState extends State<RequestHelp> {
             Divider(height: 32),
             // Contact Options
             Text('Contact Options',
-                style: GoogleFonts.playfairDisplay(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 18,
                   color: Colors.grey.shade700,
                 )),
             ListTile(
               leading: Icon(Icons.email, color: Colors.indigo),
-              title: Text('support@armii.com', style: TextStyle(color: Colors.indigo.shade900)),
+              title: Text('support@armii.com', style: TextStyle(fontFamily: 'Inter', color: Colors.indigo.shade900)),
               onTap: () {},
             ),
             ListTile(
               leading: Icon(Icons.phone, color: Colors.indigo),
-              title: Text('+91 98765 43210', style: TextStyle(color: Colors.indigo.shade900)),
+              title: Text('+91 98765 43210', style: TextStyle(fontFamily: 'Inter', color: Colors.indigo.shade900)),
               onTap: () {},
             ),
             ListTile(
               leading: Icon(Icons.chat, color: Colors.indigo),
-              title: Text('Live Chat', style: TextStyle(color: Colors.indigo.shade900)),
+              title: Text('Live Chat', style: TextStyle(fontFamily: 'Inter', color: Colors.indigo.shade900)),
               onTap: () {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Live Chat Clicked (demo only)')),
+                  SnackBar(content: Text('Live Chat Clicked (demo only)', style: TextStyle(fontFamily: 'Inter'))),
                 );
               },
             ),
             Divider(height: 32),
             // FAQ Section
             Text('Frequently Asked Questions',
-                style: GoogleFonts.playfairDisplay(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 18,
                   color: Colors.grey.shade700,
                 )),
             ...faqs.map((faq) => ExpansionTile(
-                  title: Text(faq['q']!, style: TextStyle(color: Colors.indigo.shade900)),
+                  title: Text(faq['q']!, style: TextStyle(fontFamily: 'Inter', color: Colors.indigo.shade900)),
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                      child: Text(faq['a']!, style: TextStyle(color: Colors.grey.shade800)),
+                      child: Text(faq['a']!, style: TextStyle(fontFamily: 'Inter', color: Colors.grey.shade800)),
                     ),
                   ],
                 )),
             Divider(height: 32),
             // Previous Requests
             Text('Previous Requests',
-                style: GoogleFonts.playfairDisplay(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 18,
                   color: Colors.grey.shade700,
                 )),
             ...previousRequests.map((req) => ListTile(
                   leading: Icon(Icons.help, color: Colors.indigo),
-                  title: Text(req['subject']!, style: TextStyle(color: Colors.indigo.shade900)),
+                  title: Text(req['subject']!, style: TextStyle(fontFamily: 'Inter', color: Colors.indigo.shade900)),
                   trailing: Chip(
-                    label: Text(req['status']!, style: TextStyle(color: Colors.white)),
+                    label: Text(req['status']!, style: TextStyle(fontFamily: 'Inter', color: Colors.white)),
                     backgroundColor: statusColor(req['status']!),
                   ),
                 )),

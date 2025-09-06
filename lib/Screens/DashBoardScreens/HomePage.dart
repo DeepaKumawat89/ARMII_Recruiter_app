@@ -3,7 +3,6 @@ import '../plusicononclick.dart';
 import 'ObservePage.dart';
 import 'ProfilePage.dart';
 import '../../Auth/auth_provider.dart' as my_auth;
-import 'package:google_fonts/google_fonts.dart';
 import 'ChatPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../../widget/CustomAppBar.dart';
@@ -76,7 +75,7 @@ class _HomePageContent extends StatelessWidget {
 
       drawer: CustomDrawer(authProvider: my_auth.AuthProvider()),
       body: DefaultTextStyle(
-        style: GoogleFonts.playfairDisplay(color: Colors.black),
+        style: TextStyle(fontFamily: 'Inter', color: Colors.black),
         child: provider.selectedIndex == 0 ? _buildHomeContent(context, provider) : pages[provider.selectedIndex],
       ),
       bottomNavigationBar: CustomBottomNavBar(
@@ -130,10 +129,12 @@ class _HomePageContent extends StatelessWidget {
               child: TextField(
                 decoration: InputDecoration(
                   hintText: 'Search',
+                  hintStyle: TextStyle(fontFamily: 'Inter'),
                   prefixIcon: Icon(Icons.search),
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.symmetric(vertical: screenHeight * 0.012),
                 ),
+                style: TextStyle(fontFamily: 'Inter'),
                 onChanged: provider.setSearchQuery,
               ),
             ),
@@ -152,7 +153,7 @@ class _HomePageContent extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: screenHeight * 0.01, horizontal: screenWidth * 0.02),
               ),
               icon: Icon(Icons.filter_list),
-              label: Text(provider.getFilterSummary()),
+              label: Text(provider.getFilterSummary(), style: TextStyle(fontFamily: 'Inter')),
               onPressed: () => _showFilterDialog(context, provider),
             ),
           ),
@@ -182,7 +183,7 @@ class _HomePageContent extends StatelessWidget {
         return Padding(
           padding:  EdgeInsets.symmetric(horizontal: 4.0),
           child: ChoiceChip(
-            label: Text(job.name),
+            label: Text(job.name, style: TextStyle(fontFamily: 'Inter')),
             selected: provider.selectedJobTitle == job.name,
             onSelected: (_) => provider.setSelectedJobTitle(job.name),
           ),
@@ -198,10 +199,14 @@ class _HomePageContent extends StatelessWidget {
       builder: (context) {
         String newTitle = '';
         return AlertDialog(
-          title: Text('Add Job Title'),
+          title: Text('Add Job Title', style: TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.bold)),
           content: TextField(
             onChanged: (value) => newTitle = value,
-            decoration: InputDecoration(hintText: 'Job Title'),
+            decoration: InputDecoration(
+              hintText: 'Job Title',
+              hintStyle: TextStyle(fontFamily: 'Inter'),
+            ),
+            style: TextStyle(fontFamily: 'Inter'),
           ),
           actions: [
             TextButton(
@@ -211,7 +216,7 @@ class _HomePageContent extends StatelessWidget {
                 }
                 Navigator.of(context).pop();
               },
-              child: Text('Add'),
+              child: Text('Add', style: TextStyle(fontFamily: 'Inter')),
             ),
           ],
         );
@@ -242,16 +247,34 @@ class _HomePageContent extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Filter', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text('Filter',
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold
+                )
+              ),
               SizedBox(height: 16),
-              Text('By Location:', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
+              Text('By Location:',
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500
+                )
+              ),
               DropdownButton<String>(
                 isExpanded: true,
                 value: tempLocation,
                 items: provider.locationOptions.map((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
-                    child: Text(value, style: TextStyle(fontSize: 14)),
+                    child: Text(
+                      value,
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 14
+                      )
+                    ),
                   );
                 }).toList(),
                 onChanged: (String? newValue) {
@@ -260,14 +283,26 @@ class _HomePageContent extends StatelessWidget {
                 },
               ),
               SizedBox(height: 16),
-              Text('By Status:', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
+              Text('By Status:',
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500
+                )
+              ),
               DropdownButton<String>(
                 isExpanded: true,
                 value: tempStatus,
                 items: provider.statusOptions.map((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
-                    child: Text(value, style: TextStyle(fontSize: 14)),
+                    child: Text(
+                      value,
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 14
+                      )
+                    ),
                   );
                 }).toList(),
                 onChanged: (String? newValue) {
@@ -283,7 +318,7 @@ class _HomePageContent extends StatelessWidget {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    child: Text('Cancel'),
+                    child: Text('Cancel', style: TextStyle(fontFamily: 'Inter')),
                   ),
                   SizedBox(width: 8),
                   ElevatedButton(
@@ -291,7 +326,7 @@ class _HomePageContent extends StatelessWidget {
                       provider.setFilter(tempLocation, tempStatus);
                       Navigator.pop(context);
                     },
-                    child: Text('Apply'),
+                    child: Text('Apply', style: TextStyle(fontFamily: 'Inter')),
                   ),
                 ],
               ),

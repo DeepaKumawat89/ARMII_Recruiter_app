@@ -37,7 +37,11 @@ class SplashScreen extends StatelessWidget {
       body: Center(
         child: Text(
           "Splash Screen",
-          style: TextStyle(fontSize: screenWidth * 0.07, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontFamily: 'Inter',
+            fontSize: screenWidth * 0.07,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );

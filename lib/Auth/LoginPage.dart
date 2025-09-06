@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'CreateAccountPage.dart';
 import '../Screens/DashBoardScreens/HomePage.dart';
 import 'auth_provider.dart';
@@ -64,7 +63,11 @@ class LoginPage extends StatelessWidget {
               ),
               title: Text(
                 "Get Started",
-                style: GoogleFonts.playfairDisplay(color: Colors.white,fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                  fontFamily: 'Inter',
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               elevation: 4,
               leading: IconButton(
@@ -89,7 +92,8 @@ class LoginPage extends StatelessWidget {
                         // Welcome Text
                         Text(
                           "Welcome Back!",
-                          style: GoogleFonts.playfairDisplay(
+                          style: TextStyle(
+                            fontFamily: 'Inter',
                             fontSize: screenWidth * 0.07,
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
@@ -99,6 +103,7 @@ class LoginPage extends StatelessWidget {
                         Text(
                           "Login to continue using the app",
                           style: TextStyle(
+                            fontFamily: 'Inter',
                             fontSize: screenWidth * 0.045,
                             color: Colors.grey[700],
                           ),
@@ -178,7 +183,10 @@ class LoginPage extends StatelessWidget {
                             onPressed: () {},
                             child: Text(
                               "Forgot Password?",
-                              style: GoogleFonts.playfairDisplay(color: Colors.black),
+                              style: TextStyle(
+                                fontFamily: 'Inter',
+                                color: Colors.black,
+                              ),
                             ),
                           ),
                         ),
@@ -221,8 +229,12 @@ class LoginPage extends StatelessWidget {
                             },
                             child: Text(
                               "Login",
-                              style: GoogleFonts.playfairDisplay(
-                                  fontSize: screenWidth * 0.05, color: Colors.white),
+                              style: TextStyle(
+                                fontFamily: 'Inter',
+                                fontSize: screenWidth * 0.05,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                           ),
                         ),
@@ -257,7 +269,8 @@ class LoginPage extends StatelessWidget {
                     },
                     child: Text(
                       "Create New Account",
-                      style: GoogleFonts.playfairDisplay(
+                      style: TextStyle(
+                        fontFamily: 'Inter',
                         fontSize: screenWidth * 0.045,
                         color: Colors.white,
                         fontWeight: FontWeight.w600,

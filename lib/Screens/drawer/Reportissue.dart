@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ReportIssue extends StatefulWidget {
   const ReportIssue({Key? key}) : super(key: key);
@@ -47,7 +46,7 @@ class _ReportIssueState extends State<ReportIssue> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Report Issue', style: GoogleFonts.playfairDisplay()),
+        title: Text('Report Issue', style: TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.bold)),
         backgroundColor: Colors.indigo,
       ),
       backgroundColor: Colors.white,
@@ -57,7 +56,8 @@ class _ReportIssueState extends State<ReportIssue> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('Report a New Issue',
-                style: GoogleFonts.playfairDisplay(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 18,
                   color: Colors.grey.shade700,
                 )),
@@ -69,27 +69,33 @@ class _ReportIssueState extends State<ReportIssue> {
                   TextFormField(
                     decoration: InputDecoration(
                       labelText: 'Subject',
+                      labelStyle: TextStyle(fontFamily: 'Inter'),
                       border: OutlineInputBorder(),
                     ),
+                    style: TextStyle(fontFamily: 'Inter'),
                     validator: (val) => val == null || val.isEmpty ? 'Enter subject' : null,
                     onSaved: (val) => subject = val ?? '',
                   ),
                   SizedBox(height: 12),
                   DropdownButtonFormField<String>(
                     value: issueType,
-                    items: issueTypes.map((t) => DropdownMenuItem(value: t, child: Text(t))).toList(),
+                    items: issueTypes.map((t) => DropdownMenuItem(value: t, child: Text(t, style: TextStyle(fontFamily: 'Inter')))).toList(),
                     onChanged: (val) => setState(() => issueType = val ?? 'Bug'),
                     decoration: InputDecoration(
                       labelText: 'Issue Type',
+                      labelStyle: TextStyle(fontFamily: 'Inter'),
                       border: OutlineInputBorder(),
                     ),
+                    style: TextStyle(fontFamily: 'Inter'),
                   ),
                   SizedBox(height: 12),
                   TextFormField(
                     decoration: InputDecoration(
                       labelText: 'Description',
+                      labelStyle: TextStyle(fontFamily: 'Inter'),
                       border: OutlineInputBorder(),
                     ),
+                    style: TextStyle(fontFamily: 'Inter'),
                     maxLines: 3,
                     validator: (val) => val == null || val.isEmpty ? 'Enter description' : null,
                     onSaved: (val) => description = val ?? '',
@@ -103,7 +109,7 @@ class _ReportIssueState extends State<ReportIssue> {
                           foregroundColor: Colors.white,
                         ),
                         icon: Icon(Icons.attach_file),
-                        label: Text('Attach File'),
+                        label: Text('Attach File', style: TextStyle(fontFamily: 'Inter')),
                         onPressed: () {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(content: Text('Attach File Clicked (demo only)')),
@@ -112,7 +118,7 @@ class _ReportIssueState extends State<ReportIssue> {
                       ),
                       if (attachedFile != null) ...[
                         SizedBox(width: 8),
-                        Text(attachedFile!, style: TextStyle(color: Colors.grey.shade700)),
+                        Text(attachedFile!, style: TextStyle(fontFamily: 'Inter', color: Colors.grey.shade700)),
                       ]
                     ],
                   ),
@@ -129,7 +135,7 @@ class _ReportIssueState extends State<ReportIssue> {
                         ),
                       ),
                       onPressed: submitReport,
-                      child: Text('Submit', style: GoogleFonts.playfairDisplay(fontSize: 18)),
+                      child: Text('Submit', style: TextStyle(fontFamily: 'Inter', fontSize: 18)),
                     ),
                   ),
                 ],
@@ -137,15 +143,16 @@ class _ReportIssueState extends State<ReportIssue> {
             ),
             Divider(height: 32),
             Text('Previous Reports',
-                style: GoogleFonts.playfairDisplay(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 18,
                   color: Colors.grey.shade700,
                 )),
             ...previousReports.map((rep) => ListTile(
                   leading: Icon(Icons.report, color: Colors.indigo),
-                  title: Text(rep['subject']!, style: TextStyle(color: Colors.indigo.shade900)),
+                  title: Text(rep['subject']!, style: TextStyle(fontFamily: 'Inter', color: Colors.indigo.shade900)),
                   trailing: Chip(
-                    label: Text(rep['status']!, style: TextStyle(color: Colors.white)),
+                    label: Text(rep['status']!, style: TextStyle(fontFamily: 'Inter', color: Colors.white)),
                     backgroundColor: statusColor(rep['status']!),
                   ),
                 )),

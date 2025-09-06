@@ -54,7 +54,12 @@ class ApplicantDetailsPage extends StatelessWidget {
                           backgroundColor: Colors.blue[100],
                           child: Text(
                             applicant.name.isNotEmpty ? applicant.name[0] : '?',
-                            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.blue[900]),
+                            style: TextStyle(
+                              fontFamily: 'Inter',
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue[900]
+                            ),
                           ),
                         ),
                       ),
@@ -62,35 +67,97 @@ class ApplicantDetailsPage extends StatelessWidget {
                     SizedBox(height: 28),
                     ListTile(
                       leading: Icon(Icons.person, color: Colors.blueAccent),
-                      title: Text(applicant.name, style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                      subtitle: Text('Name', style: TextStyle(color: Colors.grey[600])),
+                      title: Text(
+                        applicant.name,
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold
+                        )
+                      ),
+                      subtitle: Text(
+                        'Name',
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          color: Colors.grey[600]
+                        )
+                      ),
                     ),
                     Divider(),
                     ListTile(
                       leading: Icon(Icons.work_outline, color: Colors.deepPurple),
-                      title: Text(applicant.jobTitle, style: TextStyle(fontSize: 20)),
-                      subtitle: Text('Job Title', style: TextStyle(color: Colors.grey[600])),
+                      title: Text(
+                        applicant.jobTitle,
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontSize: 20
+                        )
+                      ),
+                      subtitle: Text(
+                        'Job Title',
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          color: Colors.grey[600]
+                        )
+                      ),
                     ),
                     Divider(),
                     ListTile(
                       leading: Icon(Icons.verified_user, color: Colors.green),
-                      title: Text(applicant.status.isEmpty ? 'N/A' : applicant.status, style: TextStyle(fontSize: 20)),
-                      subtitle: Text('Status', style: TextStyle(color: Colors.grey[600])),
+                      title: Text(
+                        applicant.status.isEmpty ? 'N/A' : applicant.status,
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontSize: 20
+                        )
+                      ),
+                      subtitle: Text(
+                        'Status',
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          color: Colors.grey[600]
+                        )
+                      ),
                     ),
                     Divider(),
                     ListTile(
                       leading: Icon(Icons.location_on, color: Colors.redAccent),
-                      title: Text(applicant.location.isNotEmpty ? applicant.location : 'Unknown', style: TextStyle(fontSize: 20)),
-                      subtitle: Text('Location', style: TextStyle(color: Colors.grey[600])),
+                      title: Text(
+                        applicant.location.isNotEmpty ? applicant.location : 'Unknown',
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontSize: 20
+                        )
+                      ),
+                      subtitle: Text(
+                        'Location',
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          color: Colors.grey[600]
+                        )
+                      ),
                     ),
                     SizedBox(height: 24),
-                    Text('Contact Information', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                    Text(
+                      'Contact Information',
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18
+                      )
+                    ),
                     SizedBox(height: 8),
                     Row(
                       children: [
                         Icon(Icons.email, color: Colors.blueGrey),
                         SizedBox(width: 8),
-                        Text('johndoe@email.com', style: TextStyle(fontSize: 16)),
+                        Text(
+                          'johndoe@email.com',
+                          style: TextStyle(
+                            fontFamily: 'Inter',
+                            fontSize: 16
+                          )
+                        ),
                       ],
                     ),
                     SizedBox(height: 6),
@@ -98,20 +165,73 @@ class ApplicantDetailsPage extends StatelessWidget {
                       children: [
                         Icon(Icons.phone, color: Colors.blueGrey),
                         SizedBox(width: 8),
-                        Text('+1 234 567 890', style: TextStyle(fontSize: 16)),
+                        Text(
+                          '+1 234 567 890',
+                          style: TextStyle(
+                            fontFamily: 'Inter',
+                            fontSize: 16
+                          )
+                        ),
                       ],
                     ),
                     SizedBox(height: 20),
-                    Text('Skills', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                    Text(
+                      'Skills',
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18
+                      )
+                    ),
                     SizedBox(height: 8),
                     Wrap(
                       spacing: 10.0,
                       runSpacing: 6.0,
                       children: [
-                        Chip(label: Text('Flutter'), backgroundColor: Colors.blue[50], elevation: 2, labelStyle: TextStyle(color: Colors.blue[900])),
-                        Chip(label: Text('Dart'), backgroundColor: Colors.purple[50], elevation: 2, labelStyle: TextStyle(color: Colors.deepPurple)),
-                        Chip(label: Text('Firebase'), backgroundColor: Colors.orange[50], elevation: 2, labelStyle: TextStyle(color: Colors.deepOrange)),
-                        Chip(label: Text('UI/UX'), backgroundColor: Colors.green[50], elevation: 2, labelStyle: TextStyle(color: Colors.green[900])),
+                        Chip(
+                          label: Text(
+                            'Flutter',
+                            style: TextStyle(
+                              fontFamily: 'Inter',
+                              color: Colors.blue[900]
+                            )
+                          ),
+                          backgroundColor: Colors.blue[50],
+                          elevation: 2
+                        ),
+                        Chip(
+                          label: Text(
+                            'Dart',
+                            style: TextStyle(
+                              fontFamily: 'Inter',
+                              color: Colors.deepPurple
+                            )
+                          ),
+                          backgroundColor: Colors.purple[50],
+                          elevation: 2
+                        ),
+                        Chip(
+                          label: Text(
+                            'Firebase',
+                            style: TextStyle(
+                              fontFamily: 'Inter',
+                              color: Colors.deepOrange
+                            )
+                          ),
+                          backgroundColor: Colors.orange[50],
+                          elevation: 2
+                        ),
+                        Chip(
+                          label: Text(
+                            'UI/UX',
+                            style: TextStyle(
+                              fontFamily: 'Inter',
+                              color: Colors.green[900]
+                            )
+                          ),
+                          backgroundColor: Colors.green[50],
+                          elevation: 2
+                        ),
                       ],
                     ),
                     SizedBox(height: 24),
@@ -129,30 +249,62 @@ class ApplicantDetailsPage extends StatelessWidget {
                       },
                     ),
                     SizedBox(height: 24),
-                    Text('Application Timeline', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                    Text(
+                      'Application Timeline',
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18
+                      )
+                    ),
                     SizedBox(height: 8),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ListTile(
                           leading: Icon(Icons.check_circle, color: Colors.green),
-                          title: Text('Applied'),
-                          subtitle: Text('2025-08-01'),
+                          title: Text(
+                            'Applied',
+                            style: TextStyle(fontFamily: 'Inter')
+                          ),
+                          subtitle: Text(
+                            '2025-08-01',
+                            style: TextStyle(fontFamily: 'Inter')
+                          ),
                         ),
                         ListTile(
                           leading: Icon(Icons.timelapse, color: Colors.orange),
-                          title: Text('Interview Scheduled'),
-                          subtitle: Text('2025-08-10'),
+                          title: Text(
+                            'Interview Scheduled',
+                            style: TextStyle(fontFamily: 'Inter')
+                          ),
+                          subtitle: Text(
+                            '2025-08-10',
+                            style: TextStyle(fontFamily: 'Inter')
+                          ),
                         ),
                         ListTile(
                           leading: Icon(Icons.pending, color: Colors.grey),
-                          title: Text('Pending Decision'),
-                          subtitle: Text('2025-08-15'),
+                          title: Text(
+                            'Pending Decision',
+                            style: TextStyle(fontFamily: 'Inter')
+                          ),
+                          subtitle: Text(
+                            '2025-08-15',
+                            style: TextStyle(fontFamily: 'Inter')
+                          ),
                         ),
                       ],
                     ),
                     SizedBox(height: 24),
-                    Text('Notes', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                    Text(
+                      'Notes',
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18
+                      )
+                    ),
                     SizedBox(height: 8),
                     Container(
                       width: double.infinity,
@@ -161,7 +313,13 @@ class ApplicantDetailsPage extends StatelessWidget {
                         color: Colors.grey[200],
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text('Strong communication skills. Good portfolio.', style: TextStyle(color: Colors.indigo[900])),
+                      child: Text(
+                        'Strong communication skills. Good portfolio.',
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          color: Colors.indigo[900]
+                        )
+                      ),
                     ),
                     SizedBox(height: 24),
                     Row(
@@ -170,7 +328,13 @@ class ApplicantDetailsPage extends StatelessWidget {
                         ElevatedButton.icon(
                           onPressed: () {},
                           icon: Icon(Icons.check, color: Colors.white),
-                          label: Text('Accept', style: TextStyle(color: Colors.white)),
+                          label: Text(
+                            'Accept',
+                            style: TextStyle(
+                              fontFamily: 'Inter',
+                              color: Colors.white
+                            )
+                          ),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.indigo,
                             foregroundColor: Colors.white,
@@ -182,7 +346,13 @@ class ApplicantDetailsPage extends StatelessWidget {
                         ElevatedButton.icon(
                           onPressed: () {},
                           icon: Icon(Icons.close, color: Colors.white),
-                          label: Text('Reject', style: TextStyle(color: Colors.white)),
+                          label: Text(
+                            'Reject',
+                            style: TextStyle(
+                              fontFamily: 'Inter',
+                              color: Colors.white
+                            )
+                          ),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.grey[700],
                             foregroundColor: Colors.white,
@@ -271,7 +441,12 @@ class _WhatsAppPdfPreviewCardState extends State<WhatsAppPdfPreviewCard> {
             children: [
               Text(
                 'Deepak_Kumawat_Resume.pdf',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black87),
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                  color: Colors.black87
+                ),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -280,14 +455,36 @@ class _WhatsAppPdfPreviewCardState extends State<WhatsAppPdfPreviewCard> {
                 children: [
                   Text(
                     pageCount != null ? '$pageCount page${pageCount == 1 ? '' : 's'}' : '--',
-                    style: TextStyle(fontSize: 12, color: Colors.grey[800]),
+                    style: TextStyle(
+                      fontFamily: 'Inter',
+                      fontSize: 12,
+                      color: Colors.grey[800]
+                    ),
                   ),
-                  Text(' • ', style: TextStyle(fontSize: 12, color: Colors.grey[800])),
+                  Text(
+                    ' • ',
+                    style: TextStyle(
+                      fontFamily: 'Inter',
+                      fontSize: 12,
+                      color: Colors.grey[800]
+                    )
+                  ),
                   Text(
                     fileSize != null ? '${(fileSize! / 1024).toStringAsFixed(0)} KB' : '--',
-                    style: TextStyle(fontSize: 12, color: Colors.grey[800]),
+                    style: TextStyle(
+                      fontFamily: 'Inter',
+                      fontSize: 12,
+                      color: Colors.grey[800]
+                    ),
                   ),
-                  Text(' • pdf', style: TextStyle(fontSize: 12, color: Colors.grey[800])),
+                  Text(
+                    ' • pdf',
+                    style: TextStyle(
+                      fontFamily: 'Inter',
+                      fontSize: 12,
+                      color: Colors.grey[800]
+                    )
+                  ),
                 ],
               ),
             ],

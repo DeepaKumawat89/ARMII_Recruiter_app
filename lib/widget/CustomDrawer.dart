@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../Auth/LoginPage.dart';
 import '../Auth/auth_provider.dart' as my_auth;
+import '../Screens/drawer/InternshipCreationPage.dart';
+import '../Screens/drawer/JobCreationPage.dart';
 import '../Screens/drawer/ManageBot.dart';
 import '../Screens/drawer/ManageGreetings.dart';
 import '../Screens/drawer/MoreSetting.dart';
@@ -10,6 +12,9 @@ import '../Screens/drawer/Reportissue.dart';
 import '../Screens/drawer/RequestHelp.dart';
 import '../Screens/drawer/SwitchAccount.dart';
 import '../Screens/drawer/UpdateSoftware.dart';
+import '../Screens/drawer/JobListPage.dart';
+import '../Screens/PostJobScreen.dart';
+import '../Screens/PostInternshipScreen.dart';
 
 
 
@@ -134,7 +139,12 @@ class CustomDrawer extends StatelessWidget {
                 children: [
                   Expanded(
                     child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => JobListPage()),
+                        );
+                      },
                       style: OutlinedButton.styleFrom(
                         side: BorderSide(color: primaryColor),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
@@ -148,7 +158,7 @@ class CustomDrawer extends StatelessWidget {
                   SizedBox(width: 12),
                   Expanded(
                     child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: null,
                       style: OutlinedButton.styleFrom(
                         side: BorderSide(color: primaryColor),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
@@ -156,7 +166,50 @@ class CustomDrawer extends StatelessWidget {
                         foregroundColor: primaryColor,
                         padding: EdgeInsets.symmetric(vertical: 10),
                       ),
-                      child: Text('Posts New Job', style: GoogleFonts.playfairDisplay(fontWeight: FontWeight.w600)),
+                      child: PopupMenuButton<String>(
+                        onSelected: (value) {
+                          if (value == 'job') {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) =>JobCreationPage()),
+                            );
+                          } else if (value == 'internship') {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => InternshipCreationPage()),
+                            );
+                          }
+                        },
+                        itemBuilder: (context) => [
+                          PopupMenuItem(
+                            value: 'job',
+                            child: Row(
+                              children: [
+                                Icon(Icons.work, color: primaryColor),
+                                SizedBox(width: 8),
+                                Text('Post Job'),
+                              ],
+                            ),
+                          ),
+                          PopupMenuItem(
+                            value: 'internship',
+                            child: Row(
+                              children: [
+                                Icon(Icons.school, color: primaryColor),
+                                SizedBox(width: 8),
+                                Text('Post Internship'),
+                              ],
+                            ),
+                          ),
+                        ],
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('Posts New Job', style: GoogleFonts.playfairDisplay(fontWeight: FontWeight.w600,color: primaryColor)),
+                            Icon(Icons.arrow_drop_down),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ],

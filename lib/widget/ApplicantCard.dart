@@ -58,18 +58,30 @@ class ApplicantCard extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 24,
-                child: Text(applicant.name.isNotEmpty ? applicant.name[0] : '?', style: TextStyle(fontSize: 22)),
+                child: Text(
+                  applicant.name.isNotEmpty ? applicant.name[0] : '?',
+                  style: TextStyle(fontFamily: 'Inter', fontSize: 22)
+                ),
               ),
               SizedBox(width: 16),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(applicant.name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                    Text(
+                      applicant.name,
+                      style: TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.bold, fontSize: 18)
+                    ),
                     SizedBox(height: 4),
-                    Text(applicant.jobTitle, style: TextStyle(fontSize: 15, color: Colors.grey[700])),
+                    Text(
+                      applicant.jobTitle,
+                      style: TextStyle(fontFamily: 'Inter', fontSize: 15, color: Colors.grey[700])
+                    ),
                     SizedBox(height: 2),
-                    Text(applicant.location, style: TextStyle(fontSize: 13, color: Colors.grey[500])),
+                    Text(
+                      applicant.location,
+                      style: TextStyle(fontFamily: 'Inter', fontSize: 13, color: Colors.grey[500])
+                    ),
                   ],
                 ),
               ),
@@ -82,6 +94,7 @@ class ApplicantCard extends StatelessWidget {
                 child: Text(
                   applicant.status.isEmpty ? 'N/A' : applicant.status,
                   style: TextStyle(
+                    fontFamily: 'Inter',
                     color: _statusTextColor(applicant.status),
                     fontWeight: FontWeight.w600,
                     fontSize: 13,
@@ -135,9 +148,26 @@ class ApplicantList extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.person_off, size: 60, color: Colors.grey[400]),
+              Icon(Icons.search, size: 48, color: Colors.grey[400]),
               SizedBox(height: 16),
-              Text('No applicants found.', style: TextStyle(fontSize: 18, color: Colors.grey[600])),
+              Text(
+                'No applicants found',
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey[700],
+                ),
+              ),
+              SizedBox(height: 8),
+              Text(
+                'Try adjusting your filters',
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  fontSize: 16,
+                  color: Colors.grey[600],
+                ),
+              ),
             ],
           ),
         ),
@@ -150,7 +180,11 @@ class ApplicantList extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
           child: Text(
             'Applicants',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontFamily: 'Inter',
+              fontSize: 22,
+              fontWeight: FontWeight.bold
+            ),
           ),
         ),
         Expanded(

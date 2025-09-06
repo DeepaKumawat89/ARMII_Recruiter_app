@@ -71,6 +71,7 @@ class ChatPage extends StatelessWidget {
                   child: Text(
                     chat['name']![0],
                     style: TextStyle(
+                      fontFamily: 'Inter',
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 22,
@@ -85,6 +86,7 @@ class ChatPage extends StatelessWidget {
                     child: Text(
                       chat['name']!,
                       style: TextStyle(
+                        fontFamily: 'Inter',
                         fontWeight: FontWeight.w700,
                         fontSize: 17,
                         color: Colors.black87,
@@ -108,6 +110,7 @@ class ChatPage extends StatelessWidget {
                 child: Text(
                   chat['lastMessage']!,
                   style: TextStyle(
+                    fontFamily: 'Inter',
                     color: Colors.grey[700],
                     fontSize: 15,
                   ),
@@ -118,6 +121,7 @@ class ChatPage extends StatelessWidget {
               trailing: Text(
                 chat['time']!,
                 style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 13,
                   color: Colors.grey[500],
                   fontWeight: FontWeight.w500,

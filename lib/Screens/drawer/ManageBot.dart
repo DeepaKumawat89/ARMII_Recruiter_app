@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ManageBot extends StatefulWidget {
   const ManageBot({Key? key}) : super(key: key);
@@ -36,7 +35,7 @@ class _ManageBotState extends State<ManageBot> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Manage Bot', style: GoogleFonts.playfairDisplay()),
+        title: Text('Manage Bot', style: TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.bold)),
         backgroundColor: Colors.indigo,
       ),
       backgroundColor: Colors.white,
@@ -56,7 +55,8 @@ class _ManageBotState extends State<ManageBot> {
                 SizedBox(width: 8),
                 Text(
                   botActive ? 'Bot is Active' : 'Bot is Inactive',
-                  style: GoogleFonts.playfairDisplay(
+                  style: TextStyle(
+                    fontFamily: 'Inter',
                     color: botActive ? Colors.indigo : Colors.red,
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -90,7 +90,8 @@ class _ManageBotState extends State<ManageBot> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(botName,
-                          style: GoogleFonts.playfairDisplay(
+                          style: TextStyle(
+                            fontFamily: 'Inter',
                             fontSize: 20,
                             color: Colors.indigo.shade900,
                             fontWeight: FontWeight.bold,
@@ -114,25 +115,26 @@ class _ManageBotState extends State<ManageBot> {
             Divider(height: 32),
             // Bot Settings
             Text('Bot Settings',
-                style: GoogleFonts.playfairDisplay(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 18,
                   color: Colors.grey.shade700,
                 )),
             SwitchListTile(
-              title: Text('Auto Reply', style: TextStyle(color: Colors.indigo.shade900)),
+              title: Text('Auto Reply', style: TextStyle(fontFamily: 'Inter', color: Colors.indigo.shade900)),
               value: autoReply,
               activeColor: Colors.indigo,
               onChanged: (val) => setState(() => autoReply = val),
             ),
             SwitchListTile(
-              title: Text('Notifications', style: TextStyle(color: Colors.indigo.shade900)),
+              title: Text('Notifications', style: TextStyle(fontFamily: 'Inter', color: Colors.indigo.shade900)),
               value: notifications,
               activeColor: Colors.indigo,
               onChanged: (val) => setState(() => notifications = val),
             ),
             ListTile(
-              title: Text('Working Hours', style: TextStyle(color: Colors.indigo.shade900)),
-              subtitle: Text(workingHours, style: TextStyle(color: Colors.grey.shade700)),
+              title: Text('Working Hours', style: TextStyle(fontFamily: 'Inter', color: Colors.indigo.shade900)),
+              subtitle: Text(workingHours, style: TextStyle(fontFamily: 'Inter', color: Colors.grey.shade700)),
               trailing: Icon(Icons.edit, color: Colors.indigo),
               onTap: () {
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -143,7 +145,8 @@ class _ManageBotState extends State<ManageBot> {
             Divider(height: 32),
             // Activity Log
             Text('Activity Log',
-                style: GoogleFonts.playfairDisplay(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 18,
                   color: Colors.grey.shade700,
                 )),
@@ -153,14 +156,15 @@ class _ManageBotState extends State<ManageBot> {
                 itemCount: activityLog.length,
                 itemBuilder: (context, idx) => ListTile(
                   leading: Icon(Icons.bolt, color: Colors.indigo),
-                  title: Text(activityLog[idx], style: TextStyle(color: Colors.grey.shade800)),
+                  title: Text(activityLog[idx], style: TextStyle(fontFamily: 'Inter', color: Colors.grey.shade800)),
                 ),
               ),
             ),
             Divider(height: 32),
             // Test Bot
             Text('Test the Bot',
-                style: GoogleFonts.playfairDisplay(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 18,
                   color: Colors.grey.shade700,
                 )),
@@ -195,7 +199,7 @@ class _ManageBotState extends State<ManageBot> {
                   color: Colors.grey.shade100,
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Text(testResponse, style: TextStyle(color: Colors.indigo.shade900)),
+                child: Text(testResponse, style: TextStyle(fontFamily: 'Inter', color: Colors.indigo.shade900)),
               ),
             ],
           ],

@@ -1,6 +1,5 @@
 import 'package:armii_recruiter_app/Auth/LoginPage.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../app_state.dart';
 
@@ -22,7 +21,8 @@ class SelectRolePage extends StatelessWidget {
               // Title
               Text(
                 "Select Your Role",
-                style: GoogleFonts.inter(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: screenWidth * 0.08,
                   fontWeight: FontWeight.bold,
                   color: Colors.black, // White title
@@ -49,7 +49,8 @@ class SelectRolePage extends StatelessWidget {
                   child: Center(
                     child: Text(
                       "I am Recruiter / Hirer",
-                      style: GoogleFonts.inter(
+                      style: TextStyle(
+                        fontFamily: 'Inter',
                         fontSize: MediaQuery.of(context).size.width * 0.045,
                         fontWeight: FontWeight.w600,
                         color: Colors.black, // Black text
@@ -86,8 +87,9 @@ class SelectRolePage extends StatelessWidget {
                   child: Center(
                     child: Text(
                       "I am Candidate",
-                      style: GoogleFonts.inter(
-                        fontSize: screenWidth * 0.045,
+                      style: const TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 18, // or use screenWidth * 0.045 if you want to keep it responsive
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
                       ),

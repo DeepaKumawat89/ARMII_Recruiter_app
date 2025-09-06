@@ -129,6 +129,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                 Text(
                   widget.userName,
                   style: TextStyle(
+                    fontFamily: 'Inter',
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
@@ -154,6 +155,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
               },
               decoration: InputDecoration(
                 hintText: 'Search...',
+                hintStyle: TextStyle(fontFamily: 'Inter'),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(24),
                   borderSide: BorderSide(color: Colors.grey.shade300),
@@ -165,6 +167,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                 prefixIcon: Icon(Icons.search, color: Colors.grey),
                 contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 0),
               ),
+              style: TextStyle(fontFamily: 'Inter'),
             ),
           ),
           Expanded(
@@ -192,7 +195,13 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                           children: [
                             Icon(Icons.attach_file, size: 18, color: Colors.grey[700]),
                             SizedBox(width: 2),
-                            Text(url.split('/').last, style: TextStyle(fontSize: 12)),
+                            Text(
+                              url.split('/').last,
+                              style: TextStyle(
+                                fontFamily: 'Inter',
+                                fontSize: 12
+                              )
+                            ),
                           ],
                         ),
                 )).toList(),
@@ -585,7 +594,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                               },
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                child: Text(emoji, style: TextStyle(fontSize: 28)),
+                                child: Text(emoji, style: TextStyle(fontFamily: 'Inter', fontSize: 28)),
                               ),
                             )).toList(),
                           ),
@@ -625,6 +634,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                                           child: Text(
                                             item['text'] as String,
                                             style: TextStyle(
+                                              fontFamily: 'Inter',
                                               color: item['color'] as Color,
                                               fontWeight: item['text'] == 'Delete'
                                                   ? FontWeight.w500
@@ -710,15 +720,25 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                                     children: [
                                       Icon(Icons.attach_file, size: 18, color: Colors.grey[700]),
                                       SizedBox(width: 4),
-                                      Expanded(child: Text(url.split('/').last, style: TextStyle(fontSize: 13, color: Colors.grey[800]))),
+                                      Expanded(
+                                        child: Text(
+                                          url.split('/').last,
+                                          style: TextStyle(
+                                            fontFamily: 'Inter',
+                                            color: Colors.grey[600],
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ),
                                     ],
                                   ),
                           )),
                     Text(
                       message.text,
                       style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 16,
                         color: message.isMe ? Colors.white : Colors.black87,
-                        fontSize: 15,
                       ),
                     ),
                   ],

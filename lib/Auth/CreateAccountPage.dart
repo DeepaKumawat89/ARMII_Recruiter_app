@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'auth_provider.dart';
 import '../Screens/DashBoardScreens/HomePage.dart';
@@ -100,7 +99,7 @@ class CreateAccountPage extends StatelessWidget {
           (route) => false,
         );
       }
-    } catch (e, stack) {
+    } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Error: $e"), backgroundColor: Colors.red),
       );
@@ -131,7 +130,8 @@ class CreateAccountPage extends StatelessWidget {
               ),
               title: Text(
                 "Details & Verification",
-                style: GoogleFonts.playfairDisplay(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
@@ -154,7 +154,7 @@ class CreateAccountPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text("Upload Certificate (PDF/Image/Doc)",
-                      style: GoogleFonts.playfairDisplay(fontSize: screenWidth * 0.04, fontWeight: FontWeight.bold)),
+                      style: TextStyle(fontFamily: 'Inter', fontSize: screenWidth * 0.04, fontWeight: FontWeight.bold)),
                    SizedBox(height: screenHeight * 0.01),
                   ValueListenableBuilder<String?>(
                     valueListenable: uploadedFileName,
@@ -175,7 +175,8 @@ class CreateAccountPage extends StatelessWidget {
                                 fileName == null
                                     ? "Click to Upload File"
                                     : "📂 $fileName",
-                                style: GoogleFonts.playfairDisplay(
+                                style: TextStyle(
+                                  fontFamily: 'Inter',
                                   color: Colors.black87,
                                   fontSize: 15,
                                 ),
@@ -201,13 +202,13 @@ class CreateAccountPage extends StatelessWidget {
                     builder: (context, value, _) => DropdownButtonFormField<String>(
                       value: value,
                       items: ["Own Company", "For Other Company"]
-                          .map((e) => DropdownMenuItem(value: e, child: Text(e, style: GoogleFonts.playfairDisplay())))
+                          .map((e) => DropdownMenuItem(value: e, child: Text(e, style: const TextStyle(fontFamily: 'Inter'))))
                           .toList(),
                       onChanged: (val) => recruitingFor.value = val,
                       validator: (val) => val == null ? 'Please select an option' : null,
                       decoration: InputDecoration(
                         labelText: "Recruiting For",
-                        labelStyle: GoogleFonts.playfairDisplay(fontSize: screenWidth * 0.04),
+                        labelStyle: TextStyle(fontFamily: 'Inter', fontSize: screenWidth * 0.04),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -220,7 +221,7 @@ class CreateAccountPage extends StatelessWidget {
                     validator: (v) => v == null || v.isEmpty ? 'Enter company name' : null,
                     decoration: InputDecoration(
                       labelText: "Company Name",
-                      labelStyle: GoogleFonts.playfairDisplay(fontSize: screenWidth * 0.04),
+                      labelStyle: TextStyle(fontFamily: 'Inter', fontSize: screenWidth * 0.04),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
@@ -233,7 +234,7 @@ class CreateAccountPage extends StatelessWidget {
                     validator: (v) => v == null || v.isEmpty ? 'Enter recruiter name' : null,
                     decoration: InputDecoration(
                       labelText: "Owner / Recruiter Name",
-                      labelStyle: GoogleFonts.playfairDisplay(fontSize: screenWidth * 0.04),
+                      labelStyle: TextStyle(fontFamily: 'Inter', fontSize: screenWidth * 0.04),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
@@ -250,7 +251,7 @@ class CreateAccountPage extends StatelessWidget {
                     },
                     decoration: InputDecoration(
                       labelText: "Mail Address (Business/Personal)",
-                      labelStyle: GoogleFonts.playfairDisplay(fontSize: screenWidth * 0.04),
+                      labelStyle: TextStyle(fontFamily: 'Inter', fontSize: screenWidth * 0.04),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
@@ -271,7 +272,7 @@ class CreateAccountPage extends StatelessWidget {
                       },
                       decoration: InputDecoration(
                         labelText: "Contact Number",
-                        labelStyle: GoogleFonts.playfairDisplay(fontSize: screenWidth * 0.04),
+                        labelStyle: TextStyle(fontFamily: 'Inter', fontSize: screenWidth * 0.04),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -299,7 +300,10 @@ class CreateAccountPage extends StatelessWidget {
                     validator: (v) => v == null || v.isEmpty ? 'Enter social media link' : null,
                     decoration: InputDecoration(
                       labelText: "Company Social Media Link",
-                      labelStyle: GoogleFonts.playfairDisplay(fontSize: screenWidth * 0.04),
+                      labelStyle: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: screenWidth * 0.04,
+                      ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
@@ -319,7 +323,7 @@ class CreateAccountPage extends StatelessWidget {
                       },
                       decoration: InputDecoration(
                         labelText: "Password",
-                        labelStyle: GoogleFonts.playfairDisplay(fontSize: screenWidth * 0.04),
+                        labelStyle: TextStyle(fontFamily: 'Inter', fontSize: screenWidth * 0.04),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -336,7 +340,7 @@ class CreateAccountPage extends StatelessWidget {
                     controller: websiteController,
                     decoration: InputDecoration(
                       labelText: "Website Link (Optional)",
-                      labelStyle: GoogleFonts.playfairDisplay(fontSize: screenWidth * 0.04),
+                      labelStyle: TextStyle(fontFamily: 'Inter', fontSize: screenWidth * 0.04),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
@@ -360,7 +364,8 @@ class CreateAccountPage extends StatelessWidget {
                           ? CircularProgressIndicator(color: Colors.white)
                           : Text(
                         "Create Account",
-                        style: GoogleFonts.playfairDisplay(
+                        style: TextStyle(
+                          fontFamily: 'Inter',
                           fontSize: screenWidth * 0.05,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,

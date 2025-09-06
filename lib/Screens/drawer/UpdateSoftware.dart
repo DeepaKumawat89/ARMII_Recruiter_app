@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class UpdateSoftware extends StatefulWidget {
   const UpdateSoftware({Key? key}) : super(key: key);
@@ -32,14 +31,14 @@ class _UpdateSoftwareState extends State<UpdateSoftware> {
           '- Improved performance\n- Bug fixes\n- New feature: Dark mode';
     });
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Checked for updates!')),
+      SnackBar(content: Text('Checked for updates!', style: TextStyle(fontFamily: 'Inter'))),
     );
   }
 
   void updateApp() {
     // Dummy update action
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Redirecting to app store...')),
+      SnackBar(content: Text('Redirecting to app store...', style: TextStyle(fontFamily: 'Inter'))),
     );
   }
 
@@ -47,7 +46,7 @@ class _UpdateSoftwareState extends State<UpdateSoftware> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Update Software', style: GoogleFonts.playfairDisplay()),
+        title: Text('Update Software', style: TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.bold)),
         backgroundColor: Colors.indigo,
       ),
       backgroundColor: Colors.white,
@@ -57,33 +56,38 @@ class _UpdateSoftwareState extends State<UpdateSoftware> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('Current Version',
-                style: GoogleFonts.playfairDisplay(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 18,
                   color: Colors.grey.shade700,
                 )),
             SizedBox(height: 4),
             Text(currentVersion,
-                style: GoogleFonts.playfairDisplay(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 22,
                   color: Colors.indigo.shade900,
                   fontWeight: FontWeight.bold,
                 )),
             SizedBox(height: 24),
             Text('Latest Version',
-                style: GoogleFonts.playfairDisplay(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 18,
                   color: Colors.grey.shade700,
                 )),
             SizedBox(height: 4),
             Text(latestVersion,
-                style: GoogleFonts.playfairDisplay(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 22,
                   color: Colors.indigo.shade900,
                   fontWeight: FontWeight.bold,
                 )),
             SizedBox(height: 12),
             Text('Release Notes',
-                style: GoogleFonts.playfairDisplay(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 16,
                   color: Colors.grey.shade700,
                 )),
@@ -97,6 +101,7 @@ class _UpdateSoftwareState extends State<UpdateSoftware> {
               ),
               child: Text(releaseNotes,
                   style: TextStyle(
+                    fontFamily: 'Inter',
                     color: Colors.grey.shade800,
                     fontSize: 15,
                   )),
@@ -119,7 +124,7 @@ class _UpdateSoftwareState extends State<UpdateSoftware> {
                       ),
                       icon: Icon(Icons.refresh),
                       label: Text('Check for Updates',
-                          style: GoogleFonts.playfairDisplay(fontSize: 16)),
+                          style: TextStyle(fontFamily: 'Inter', fontSize: 16)),
                       onPressed: checkForUpdates,
                     ),
                   ),
@@ -137,7 +142,7 @@ class _UpdateSoftwareState extends State<UpdateSoftware> {
                         ),
                         icon: Icon(Icons.system_update_alt),
                         label: Text('Update Now',
-                            style: GoogleFonts.playfairDisplay(fontSize: 16)),
+                            style: TextStyle(fontFamily: 'Inter', fontSize: 16)),
                         onPressed: updateApp,
                       ),
                     ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class PaymentTracking extends StatelessWidget {
   PaymentTracking({Key? key}) : super(key: key);
@@ -66,7 +65,7 @@ class PaymentTracking extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Subscription', style: GoogleFonts.playfairDisplay()),
+        title: Text('Subscription', style: TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.bold)),
         backgroundColor: Colors.indigo,
       ),
       backgroundColor: Colors.white,
@@ -91,12 +90,14 @@ class PaymentTracking extends StatelessWidget {
                   Row(
                     children: [
                       Text('Current Plan: ',
-                          style: GoogleFonts.playfairDisplay(
+                          style: TextStyle(
+                            fontFamily: 'Inter',
                             color: Colors.indigo.shade900,
                             fontSize: 16,
                           )),
                       Text(currentSubscription['plan'],
-                          style: GoogleFonts.playfairDisplay(
+                          style: TextStyle(
+                            fontFamily: 'Inter',
                             color: Colors.indigo,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -162,7 +163,8 @@ class PaymentTracking extends StatelessWidget {
               ),
             ),
             Text('Subscription Payment History',
-                style: GoogleFonts.playfairDisplay(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 18,
                   color: Colors.grey.shade700,
                 )),
@@ -182,7 +184,8 @@ class PaymentTracking extends StatelessWidget {
                       leading: Icon(Icons.subscriptions, color: Colors.indigo),
                       title: Text(
                         '₹${payment['amount'].toStringAsFixed(2)} - ${payment['plan']}',
-                        style: GoogleFonts.playfairDisplay(
+                        style: TextStyle(
+                          fontFamily: 'Inter',
                           color: Colors.indigo.shade900,
                           fontWeight: FontWeight.bold,
                         ),
@@ -224,4 +227,3 @@ class PaymentTracking extends StatelessWidget {
     );
   }
 }
-

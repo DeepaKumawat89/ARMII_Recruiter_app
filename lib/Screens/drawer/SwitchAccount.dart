@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class SwitchAccount extends StatelessWidget {
   SwitchAccount({Key? key}) : super(key: key);
@@ -29,7 +28,7 @@ class SwitchAccount extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Switch Account', style: GoogleFonts.playfairDisplay()),
+        title: Text('Switch Account', style: TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.bold)),
         backgroundColor: Colors.indigo,
       ),
       backgroundColor: Colors.white,
@@ -55,19 +54,20 @@ class SwitchAccount extends StatelessWidget {
                       backgroundColor: Colors.indigo,
                       child: Text(
                         account['avatar']!,
-                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontFamily: 'Inter'),
                       ),
                     ),
                     title: Text(
                       account['name']!,
-                      style: GoogleFonts.playfairDisplay(
+                      style: TextStyle(
+                        fontFamily: 'Inter',
                         color: Colors.indigo.shade900,
                         fontWeight: isCurrent ? FontWeight.bold : FontWeight.normal,
                       ),
                     ),
                     subtitle: Text(
                       account['email']!,
-                      style: TextStyle(color: Colors.grey.shade700),
+                      style: TextStyle(fontFamily: 'Inter', color: Colors.grey.shade700),
                     ),
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -78,7 +78,7 @@ class SwitchAccount extends StatelessWidget {
                             onPressed: () {
                               // Dummy switch action
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text('Switched to ${account['name']}')),
+                                SnackBar(content: Text('Switched to ${account['name']}', style: TextStyle(fontFamily: 'Inter'))),
                               );
                             },
                           ),
@@ -87,7 +87,7 @@ class SwitchAccount extends StatelessWidget {
                           onPressed: () {
                             // Dummy remove action
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text('Removed ${account['name']}')),
+                              SnackBar(content: Text('Removed ${account['name']}', style: TextStyle(fontFamily: 'Inter'))),
                             );
                           },
                         ),
@@ -112,11 +112,11 @@ class SwitchAccount extends StatelessWidget {
                   ),
                 ),
                 icon: Icon(Icons.add),
-                label: Text('Add Account', style: GoogleFonts.playfairDisplay(fontSize: 18)),
+                label: Text('Add Account', style: TextStyle(fontFamily: 'Inter', fontSize: 18)),
                 onPressed: () {
                   // Dummy add action
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Add Account Clicked')),
+                    SnackBar(content: Text('Add Account Clicked', style: TextStyle(fontFamily: 'Inter'))),
                   );
                 },
               ),
