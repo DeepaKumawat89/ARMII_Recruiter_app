@@ -1,16 +1,69 @@
-# armii_recruiter_app
+<h1 align="center">💼 Recruiter App UI</h1>
 
-A new Flutter project.
+<p align="center">
+  <b>A Modern Recruiter Application Interface Built with Flutter</b>
+</p>
 
-## Getting Started
+<p align="center">
+  Post Jobs • Track Applicants • Manage Hiring Seamlessly
+</p>
 
-This project is a starting point for a Flutter application.
+<p align="center">
+  <img src="Recruiter App.png" width="950" alt="Recruiter App UI"/>
+</p>
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## ✨ Overview
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Recruiter App UI is a clean and modern mobile application interface designed for recruiters to manage job postings and track applicants efficiently.
+
+The project includes multiple well-structured screens such as login, dashboard, job posting form, applicant tracking, and recruiter profile management.
+
+> ⚠️ This project includes only the UI (User Interface).  
+> No backend or database integration is implemented.
+
+---
+
+## 🚀 Features
+
+- 🔐 Authentication Screens (Login / Get Started)
+- 📊 Recruiter Dashboard
+- 📝 Post Job Interface
+- 👥 Applicant Tracking List
+- 🔎 Search & Filter UI
+- 👤 Recruiter Profile Screen
+- 📱 Responsive & Clean Layout
+- 🎨 Professional Design System
+
+---
+
+## 🛠️ Tech Stack
+
+- **Flutter**
+- **Dart**
+
+---
+
+## 🎯 Learning Outcomes
+
+This project helped in practicing:
+
+- Advanced Flutter UI structuring  
+- Reusable widget creation  
+- Multi-screen navigation  
+- Layout alignment & responsiveness  
+- Clean and scalable UI architecture  
+
+---
+
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/your-username/recruiter-app-ui.git
+cd recruiter-app-ui
+flutter pub get
+flutter run
+```
+
+---
